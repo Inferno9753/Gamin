@@ -7,6 +7,6 @@ const GameBtn = forwardRef(({ color, border, bg, onClick }, ref) => (
     onClick={onClick}
     ref={ref}
   />
-));
+)); 
 
 export default GameBtn;
