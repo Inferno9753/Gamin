@@ -12,7 +12,6 @@ const LeaderBoard = () => {
             const filteredData = data.docs.map((doc) => ({
                 ...doc.data(),
             }))
-            console.log(filteredData);
             setRank(filteredData);
         } catch (error) {
             console.log(error);
@@ -21,6 +20,10 @@ const LeaderBoard = () => {
 
     useEffect(() => {
         getScore();
+        rank.sort((a, b) => {
+            return b.highscore - a.highscore;
+        });
+        console.log(rank);
     }, []);
     return (
         <div>LeaderBoard</div>
